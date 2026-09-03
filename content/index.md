@@ -1,8 +1,10 @@
 ---
-title: Welcome
 publish: true
+title: Домашняя страница
+created: 2026-09-03T05:33:09.729Z
+modified: 2026-09-03T08:13:54.121Z
 ---
 
-Welcome to your Quartz site! This is your home page.
+# Добро пожаловать на мой сайт
 
-Edit this note in Obsidian, then publish it with Quartz Syncer.
+Здесь будут мои заметки.
