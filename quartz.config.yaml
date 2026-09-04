@@ -16,8 +16,8 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Fira Sans
-      body: Fira Sans
+      header: Source Sans Pro
+      body: Source Sans Pro
       code: IBM Plex Mono
     colors:
       lightMode:
