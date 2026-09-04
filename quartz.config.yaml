@@ -6,7 +6,7 @@ configuration:
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: ru-RU
   baseUrl: semsig13-tech.github.io/TDOC-FAST
   ignorePatterns:
     - private
