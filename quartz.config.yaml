@@ -196,11 +196,6 @@ plugins:
       position: beforeBody
       priority: 5
       condition: not-index
-      options:
-        spacerSymbol: "❯"
-        rootName: Домашняя страница
-        resolveFrontmatterTitle: true
-        showCurrentPage: true
   - source: "@quartz-community/comments"
     enabled: false
     options:
