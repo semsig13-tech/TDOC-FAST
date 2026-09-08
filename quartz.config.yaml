@@ -192,6 +192,8 @@ plugins:
       group: toolbar
   - source: "@quartz-community/breadcrumbs"
     enabled: true
+    options:
+      rootName: "Домашняя страница"
     layout:
       position: beforeBody
       priority: 5
