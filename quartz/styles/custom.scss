@@ -1,3 +1,96 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+// ============================================================================
+// Block References and Anchors
+// ============================================================================
+
+// Add data attributes for block references to support ^block-id links
+[data-block-id],
+[data-block] {
+  position: relative;
+  
+  // Allow block references to have proper anchor behavior
+  &[id] {
+    scroll-margin-top: $topSpacing;
+  }
+}
+
+// Style block reference anchors similarly to header anchors
+a[href*="#^"] {
+  text-decoration: none;
+  
+  &.internal {
+    background-color: var(--highlight);
+    padding: 0 0.1rem;
+    border-radius: 5px;
+    
+    &:hover {
+      color: var(--tertiary);
+      background-color: var(--highlight);
+    }
+  }
+}
+
+// ============================================================================
+// Full Table Borders
+// ============================================================================
+
+table {
+  border-collapse: collapse;
+  border: 1px solid var(--gray);
+  
+  th,
+  td {
+    border: 1px solid var(--lightgray);
+  }
+  
+  th {
+    border-color: var(--gray);
+    background-color: var(--highlight);
+  }
+  
+  // Add borders between all cells
+  & tbody {
+    td {
+      border-right: 1px solid var(--lightgray);
+      
+      &:last-child {
+        border-right: 1px solid var(--gray);
+      }
+    }
+    
+    tr:last-child td {
+      border-bottom: 1px solid var(--gray);
+    }
+  }
+  
+  // Header row full borders
+  & thead {
+    th {
+      border-right: 1px solid var(--gray);
+      border-bottom: 2px solid var(--gray);
+      
+      &:last-child {
+        border-right: 1px solid var(--gray);
+      }
+    }
+  }
+}
+
+// Container table with proper border display
+.table-container > table {
+  border: 1px solid var(--gray);
+  
+  th {
+    border: 1px solid var(--gray);
+    background-color: var(--highlight);
+  }
+  
+  td {
+    border: 1px solid var(--lightgray);
+  }
+  
+  tr:last-child td {
+    border-bottom: 1px solid var(--gray);
+  }
+}
