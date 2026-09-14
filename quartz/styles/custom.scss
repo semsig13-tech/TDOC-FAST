@@ -1,37 +1,6 @@
 @use "./variables.scss" as *;
 
 // ============================================================================
-// Block References and Anchors
-// ============================================================================
-
-// Add data attributes for block references to support ^block-id links
-[data-block-id],
-[data-block] {
-  position: relative;
-  
-  // Allow block references to have proper anchor behavior
-  &[id] {
-    scroll-margin-top: $topSpacing;
-  }
-}
-
-// Style block reference anchors similarly to header anchors
-a[href*="#^"] {
-  text-decoration: none;
-  
-  &.internal {
-    background-color: var(--highlight);
-    padding: 0 0.1rem;
-    border-radius: 5px;
-    
-    &:hover {
-      color: var(--tertiary);
-      background-color: var(--highlight);
-    }
-  }
-}
-
-// ============================================================================
 // Full Table Borders
 // ============================================================================
 
@@ -46,6 +15,7 @@ table {
   
   th {
     border-color: var(--gray);
+    background-color: var(--highlight);
   }
   
   // Add borders between all cells
@@ -82,6 +52,7 @@ table {
   
   th {
     border: 1px solid var(--gray);
+    background-color: var(--highlight);
   }
   
   td {
