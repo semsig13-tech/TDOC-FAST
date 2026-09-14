@@ -1,51 +1,63 @@
 import { QuartzTransformerPlugin } from "../types"
-import { Root, Element } from "hast"
-import { visit } from "unist-util-visit"
+import { Root, Paragraph, Element } from "hast"
+import { visit, SKIP } from "unist-util-visit"
 
 export const BlockReferences: QuartzTransformerPlugin = () => {
   return {
     name: "BlockReferences",
     htmlPass({ tree }) {
-      // Store blocks by ID for transclusion support
       const blocks: Record<string, Element> = {}
 
-      visit(tree, "element", (node: Element, index: number | undefined, parent) => {
-        if (!node.children || node.children.length === 0) return
+      visit(tree, (node: any, index: number | undefined, parent: any) => {
+        if (node.type !== "element") return
 
-        // Look for text nodes containing ^block-id syntax
-        for (let i = node.children.length - 1; i >= 0; i--) {
-          const child = node.children[i]
+        const element = node as Element
 
-          if (child.type === "text") {
-            const text = child.value as string
-            // Match ^block-id at the end of text (Obsidian syntax)
-            const match = text.match(/\s+\^([a-zA-Z0-9\-]+)\s*$/)
+        // Process all elements that might contain block references
+        if (element.children && element.children.length > 0) {
+          let lastChild = element.children[element.children.length - 1]
 
-            if (match) {
-              const blockId = match[1]
-              // Remove the block-id syntax from the text
-              child.value = text.replace(/\s+\^\w+\s*$/, "").trimEnd()
+          // Get text content from last child (could be text node or nested element)
+          let textValue = ""
+          if (lastChild.type === "text") {
+            textValue = lastChild.value as string
+          }
 
-              // Add ID to the parent block element
-              if (!node.properties) node.properties = {}
-              node.properties.id = blockId
+          // Match ^block-id at the end
+          const blockMatch = textValue.match(/\s+\^([a-zA-Z0-9\-_]+)\s*$/)
 
-              // Store block reference for transclusion
-              blocks[blockId] = node
+          if (blockMatch) {
+            const blockId = blockMatch[1]
 
-              // For compatibility, also add data attributes
-              if (!node.properties.className) node.properties.className = []
-              if (!Array.isArray(node.properties.className)) {
-                node.properties.className = [node.properties.className as string]
-              }
-              ;(node.properties.className as string[]).push("block-reference")
-              node.properties.dataBlockId = blockId
+            // Remove the ^block-id from text
+            if (lastChild.type === "text") {
+              lastChild.value = textValue
+                .slice(0, blockMatch.index)
+                .trimEnd()
             }
+
+            // Add ID to current element
+            if (!element.properties) element.properties = {}
+            element.properties.id = blockId
+
+            // Add CSS class for styling
+            if (!element.properties.className) {
+              element.properties.className = []
+            }
+            if (!Array.isArray(element.properties.className)) {
+              element.properties.className = [
+                element.properties.className as string,
+              ]
+            }
+            ;(element.properties.className as string[]).push("block-reference")
+
+            // Store for transclusion
+            blocks[blockId] = element
           }
         }
       })
 
-      // Attach blocks metadata to tree for transclusion support
+      // Attach blocks to tree for transclusion support
       ;(tree as any).blocks = blocks
 
       return tree
