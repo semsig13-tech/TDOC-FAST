@@ -61,3 +61,46 @@ table {
     border-bottom: 1px solid var(--gray);
   }
 }
+
+    td {
+      border-right: 1px solid var(--lightgray);
+      
+      &:last-child {
+        border-right: 1px solid var(--gray);
+      }
+    }
+    
+    tr:last-child td {
+      border-bottom: 1px solid var(--gray);
+    }
+  }
+  
+  // Header row full borders
+  & thead {
+    th {
+      border-right: 1px solid var(--gray);
+      border-bottom: 2px solid var(--gray);
+      
+      &:last-child {
+        border-right: 1px solid var(--gray);
+      }
+    }
+  }
+}
+
+// Container table with proper border display
+.table-container > table {
+  border: 1px solid var(--gray);
+  
+  th {
+    border: 1px solid var(--gray);
+  }
+  
+  td {
+    border: 1px solid var(--lightgray);
+  }
+  
+  tr:last-child td {
+    border-bottom: 1px solid var(--gray);
+  }
+}
