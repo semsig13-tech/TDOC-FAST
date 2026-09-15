@@ -9,7 +9,7 @@ table {
   border: 1px solid var(--gray);
 
   th, td {
-    border: 1px solid var(--lightgray);
+    border: 1px solid var(--gray);
   }
 
   th {
@@ -19,7 +19,7 @@ table {
   // Add borders between all cells
   & tbody {
     td {
-      border-right: 1px solid var(--lightgray);
+      border-right: 1px solid var(--gray);
       &:last-child {
         border-right: 1px solid var(--gray);
       }
@@ -48,9 +48,23 @@ table {
     border: 1px solid var(--gray);
   }
   td {
-    border: 1px solid var(--lightgray);
+    border: 1px solid var(--gray);
   }
   tr:last-child td {
     border-bottom: 1px solid var(--gray);
   }
+}
+
+// ============================================================================
+// Rounded Table Corners
+// ============================================================================
+.table-container {
+  border-radius: 12px;          // можно изменить на нужное значение
+  overflow: hidden;             // обязательно, иначе скругление не обрежет углы
+  border: 1px solid var(--gray); // общая внешняя рамка для контейнера
+}
+
+// Убираем внешнюю рамку у самой таблицы, чтобы не было двойной обводки
+.table-container > table {
+  border: none;
 }
