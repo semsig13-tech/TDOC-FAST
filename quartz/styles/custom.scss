@@ -56,41 +56,25 @@ table {
 }
 
 // ============================================================================
-// Rounded Table Corners (для самой таблицы)
+// Rounded Table Corners (через clip-path — не ломает вёрстку)
 // ============================================================================
 
-// 1. Убираем рамку у контейнера, чтобы не было двойной обводки
+// 1. Контейнер: убираем его собственную рамку, оставляем только скролл
 .table-container {
   border: none !important;
-  border-radius: 12px;
-  overflow: hidden; 
+  border-radius: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  overflow-x: auto;                // горизонтальный скролл для широких таблиц
 }
 
-// 2. Стилизуем саму таблицу
+// 2. Сама таблица: скругляем через clip-path, вёрстку не трогаем
 .table-container > table {
-  border-collapse: separate; // Меняем с collapse на separate, иначе border-radius не сработает
-  border-spacing: 0;         // Убираем отступы между ячейками
-  border: 1px solid var(--gray); // Внешняя рамка таблицы
-  border-radius: 12px;       // Скругление углов самой таблицы
-  overflow: hidden;          // Обрезаем внутренние ячейки по скруглению
+  border-collapse: collapse;       // оставляем как было
+  border: 1px solid var(--gray);   // внешняя рамка
+  border-radius: 12px;             // для браузеров, которые поддерживают
+  clip-path: inset(0 round 12px);  // главный приём — работает везде
   width: 100%;
-}
-
-// 3. Настраиваем границы ячеек (чтобы не было двойных линий)
-.table-container > table th,
-.table-container > table td {
-  border: none;              // Сбрасываем стандартные границы
-  border-bottom: 1px solid var(--gray);
-  border-right: 1px solid var(--gray);
-}
-
-// 4. Убираем правую границу у последнего столбца
-.table-container > table th:last-child,
-.table-container > table td:last-child {
-  border-right: none;
-}
-
-// 5. Убираем нижнюю границу у последней строки
-.table-container > table tr:last-child td {
-  border-bottom: none;
+  overflow: hidden;                // на случай, если clip-path не сработает
+  display: table;                  // фиксируем table-модель
 }
