@@ -56,15 +56,41 @@ table {
 }
 
 // ============================================================================
-// Rounded Table Corners
+// Rounded Table Corners (для самой таблицы)
 // ============================================================================
+
+// 1. Убираем рамку у контейнера, чтобы не было двойной обводки
 .table-container {
-  border-radius: 12px;          // можно изменить на нужное значение
-  overflow: hidden;             // обязательно, иначе скругление не обрежет углы
-  border: 1px solid var(--gray); // общая внешняя рамка для контейнера
+  border: none !important;
+  border-radius: 12px;
+  overflow: hidden; 
 }
 
-// Убираем внешнюю рамку у самой таблицы, чтобы не было двойной обводки
+// 2. Стилизуем саму таблицу
 .table-container > table {
-  border: none;
+  border-collapse: separate; // Меняем с collapse на separate, иначе border-radius не сработает
+  border-spacing: 0;         // Убираем отступы между ячейками
+  border: 1px solid var(--gray); // Внешняя рамка таблицы
+  border-radius: 12px;       // Скругление углов самой таблицы
+  overflow: hidden;          // Обрезаем внутренние ячейки по скруглению
+  width: 100%;
+}
+
+// 3. Настраиваем границы ячеек (чтобы не было двойных линий)
+.table-container > table th,
+.table-container > table td {
+  border: none;              // Сбрасываем стандартные границы
+  border-bottom: 1px solid var(--gray);
+  border-right: 1px solid var(--gray);
+}
+
+// 4. Убираем правую границу у последнего столбца
+.table-container > table th:last-child,
+.table-container > table td:last-child {
+  border-right: none;
+}
+
+// 5. Убираем нижнюю границу у последней строки
+.table-container > table tr:last-child td {
+  border-bottom: none;
 }
