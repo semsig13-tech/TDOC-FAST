@@ -54,27 +54,3 @@ table {
     border-bottom: 1px solid var(--gray);
   }
 }
-
-// ============================================================================
-// Rounded Table Corners (через clip-path — не ломает вёрстку)
-// ============================================================================
-
-// 1. Контейнер: убираем его собственную рамку, оставляем только скролл
-.table-container {
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  overflow-x: auto;                // горизонтальный скролл для широких таблиц
-}
-
-// 2. Сама таблица: скругляем через clip-path, вёрстку не трогаем
-.table-container > table {
-  border-collapse: collapse;       // оставляем как было
-  border: 1px solid var(--gray);   // внешняя рамка
-  border-radius: 12px;             // для браузеров, которые поддерживают
-  clip-path: inset(0 round 12px);  // главный приём — работает везде
-  width: 100%;
-  overflow: hidden;                // на случай, если clip-path не сработает
-  display: table;                  // фиксируем table-модель
-}
