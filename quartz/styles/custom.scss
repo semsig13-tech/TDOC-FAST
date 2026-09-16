@@ -121,5 +121,9 @@ blockquote {
 
 // Активная вкладка в проводнике (explorer)
 .explorer a.active {
+  color: lighten(#33856E, 15%);
+}
+
+.explorer a.active a:hover {
   color: lighten(#33856E, 30%);
 }
