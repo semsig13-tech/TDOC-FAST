@@ -81,7 +81,7 @@ table {
 }
 
 // ============================================================================
-// Цвета цитат, заголовков, крошек, проводника, активной заметки
+// Цвета цита, ссылок, крошек, проводника, оглавления, обратных ссылок
 // ============================================================================
 
 // Цвет полосы цитаты (blockquote)
@@ -147,7 +147,7 @@ blockquote {
   .note-content a:hover,
   article a:hover {
     color: lighten(#33856E, 45%);            // ещё светлее при наведении
-    background-color: rgba(#4CAF8E, 0.15);   // заливка чуть плотнее
+    background-color: rgba(#4CAF8E, 0.25);   // заливка чуть плотнее
   }
 }
 
@@ -167,6 +167,40 @@ blockquote {
   .note-content a:hover,
   article a:hover {
     color: darken(#33856E, 10%);             // темнее при наведении для контраста
-    background-color: rgba(#4CAF8E, 0.15);
+    background-color: rgba(#4CAF8E, 0.25);
   }
+}
+
+// Раздел обратные ссылки
+.backlink a,
+a.backlink {
+  color: #33856E;
+}
+.backlink a:hover,
+a.backlink:hover {
+  color: lighten(#33856E, 15%);
+}
+
+// Оглавление
+
+.toc a,
+.toc-content a,
+.toc ul li a {
+  color: #33856E;
+  transition: color 0.2s ease;
+}
+
+// Hover — чуть светлее, как в оригинальном стиле
+.toc a:hover,
+.toc-content a:hover,
+.toc ul li a:hover {
+  color: lighten(#33856E, 15%);
+}
+
+// Активный пункт (текущий заголовок) — светлее, чтобы выделяться
+.toc a.active,
+.toc-content a.active,
+.toc ul li a.active,
+.toc a.in-view {
+  color: lighten(#33856E, 30%);
 }
