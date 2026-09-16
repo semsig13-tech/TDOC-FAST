@@ -185,13 +185,7 @@ a.backlink:hover {
 
 // --- Тёмная тема ---
 [saved-theme="dark"] {
-  .toc a,
-  .toc-content a,
-  .toc ul li a {
-    color: #33856E;
-    transition: color 0.2s ease;
-  }
-
+ 
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
@@ -208,13 +202,7 @@ a.backlink:hover {
 
 // --- Светлая тема ---
 [saved-theme="light"] {
-  .toc a,
-  .toc-content a,
-  .toc ul li a {
-    color: darken(#33856E, 25%);              // темнее для контраста на светлом фоне
-    transition: color 0.2s ease;
-  }
-
+ 
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
