@@ -181,26 +181,58 @@ a.backlink:hover {
   color: lighten(#33856E, 15%);
 }
 
-// Оглавление
+// Оглавление (Table of Contents) — тёмная и светлая темы
 
-.toc a,
-.toc-content a,
-.toc ul li a {
+// --- Тёмная тема ---
+[saved-theme="dark"] {
+  .toc a,
+  .toc-content a,
+  .toc ul li a {
+    color: #33856E;
+    transition: color 0.2s ease;
+  }
+
+  .toc a:hover,
+  .toc-content a:hover,
+  .toc ul li a:hover {
+    color: lighten(#33856E, 15%);
+  }
+
+  .toc a.active,
+  .toc-content a.active,
+  .toc ul li a.active,
+  .toc a.in-view {
+    color: lighten(#33856E, 30%);
+  }
+}
+
+// --- Светлая тема ---
+[saved-theme="light"] {
+  .toc a,
+  .toc-content a,
+  .toc ul li a {
+    color: darken(#33856E, 15%);              // темнее для контраста на светлом фоне
+    transition: color 0.2s ease;
+  }
+
+  .toc a:hover,
+  .toc-content a:hover,
+  .toc ul li a:hover {
+    color: #33856E;                           // базовый цвет при наведении
+  }
+
+  .toc a.active,
+  .toc-content a.active,
+  .toc ul li a.active,
+  .toc a.in-view {
+    color: darken(#33856E, 25%);              // самый тёмный для активного пункта
+  }
+}
+
+// Обратные ссылки
+.backlinks a.internal-link {
   color: #33856E;
-  transition: color 0.2s ease;
 }
-
-// Hover — чуть светлее, как в оригинальном стиле
-.toc a:hover,
-.toc-content a:hover,
-.toc ul li a:hover {
+.backlinks a.internal-link:hover {
   color: lighten(#33856E, 15%);
-}
-
-// Активный пункт (текущий заголовок) — светлее, чтобы выделяться
-.toc a.active,
-.toc-content a.active,
-.toc ul li a.active,
-.toc a.in-view {
-  color: lighten(#33856E, 30%);
 }
