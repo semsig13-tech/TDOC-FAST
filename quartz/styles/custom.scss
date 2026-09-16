@@ -81,7 +81,7 @@ table {
 }
 
 // ============================================================================
-// Цвета цита, ссылок, крошек, проводника, оглавления, обратных ссылок
+// Цвета цитат, ссылок, крошек, проводника, оглавления, обратных ссылок
 // ============================================================================
 
 // Цвет полосы цитаты (blockquote)
@@ -189,14 +189,14 @@ a.backlink:hover {
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
-    color: lighten(#33856E, 30%);
+    color: lighten(#33856E, 15%);                           // светлее при наведении
   }
 
   .toc a.active,
   .toc-content a.active,
   .toc ul li a.active,
   .toc a.in-view {
-    color: lighten(#33856E, 15%);
+    color: #33856E;              // базовый для активного пункта
   }
 }
 
@@ -206,14 +206,14 @@ a.backlink:hover {
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
-    color: darken(#33856E, 15%);                           // базовый цвет при наведении
+    color: darken(#33856E, 15%);                           // темнее при наведении
   }
 
   .toc a.active,
   .toc-content a.active,
   .toc ul li a.active,
   .toc a.in-view {
-    color: #33856E;              // самый тёмный для активного пункта
+    color: #33856E;              // базовый для активного пункта
   }
 }
 
