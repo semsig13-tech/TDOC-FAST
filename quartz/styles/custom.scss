@@ -189,14 +189,14 @@ a.backlink:hover {
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
-    color: lighten(#33856E, 15%);
+    color: lighten(#33856E, 30%);
   }
 
   .toc a.active,
   .toc-content a.active,
   .toc ul li a.active,
   .toc a.in-view {
-    color: lighten(#33856E, 30%);
+    color: lighten(#33856E, 15%);
   }
 }
 
@@ -206,14 +206,14 @@ a.backlink:hover {
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
-    color: #33856E;                           // базовый цвет при наведении
+    color: darken(#33856E, 15%);                           // базовый цвет при наведении
   }
 
   .toc a.active,
   .toc-content a.active,
   .toc ul li a.active,
   .toc a.in-view {
-    color: darken(#33856E, 15%);              // самый тёмный для активного пункта
+    color: #33856E;              // самый тёмный для активного пункта
   }
 }
 
