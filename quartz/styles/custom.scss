@@ -263,10 +263,15 @@ footer .links a:hover {
 // Таблицы с картинками без границ
 // ============================================================================
 .table-container table:has(img) {
-  border: none;
+  border: none !important;
+  border-bottom: none !important;
 
+  thead,
+  tbody,
+  tr,
   th,
   td {
-    border: none;
+    border: none !important;
+    border-bottom: none !important;
   }
 }
