@@ -129,17 +129,44 @@ blockquote {
   color: lighten(#33856E, 30%);
 }
 
-// Оформление ссылок в заметке (explorer)
-.markdown-preview-view a,
-.note-content a {
-  color: lighten(#33856E, 30%);
-  background-color: rgba(#4CAF8E, 0.15);
-  transition: color 0.2s ease;
-  border-radius: 4px;
-  padding: 1px 4px;
+// Ссылки в тексте заметок (тёмная и светлая темы)
+
+// --- Тёмная тема (по умолчанию) ---
+[saved-theme="dark"] {
+  .markdown-preview-view a,
+  .note-content a,
+  article a {
+    color: lighten(#33856E, 30%);            // светлый зелёный текст
+    background-color: rgba(#4CAF8E, 0.15);   // мягкая зелёная заливка
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+    padding: 1px 4px;
+  }
+
+  .markdown-preview-view a:hover,
+  .note-content a:hover,
+  article a:hover {
+    color: lighten(#33856E, 45%);            // ещё светлее при наведении
+    background-color: rgba(#4CAF8E, 0.15);   // заливка чуть плотнее
+  }
 }
 
-.markdown-preview-view a:hover,
-.note-content a:hover {
-  color: lighten(#33856E, 45%);
+// --- Светлая тема ---
+[saved-theme="light"] {
+  .markdown-preview-view a,
+  .note-content a,
+  article a {
+    color: #33856E;                          // основной тёмно-зелёный
+    background-color: rgba(#4CAF8E, 0.15);   // мягкая зелёная заливка
+    transition: color 0.2s ease, background-color 0.2s ease;
+    border-radius: 4px;
+    padding: 1px 4px;
+  }
+
+  .markdown-preview-view a:hover,
+  .note-content a:hover,
+  article a:hover {
+    color: darken(#33856E, 10%);             // темнее при наведении для контраста
+    background-color: rgba(#4CAF8E, 0.15);
+  }
 }
