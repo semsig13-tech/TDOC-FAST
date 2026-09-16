@@ -242,3 +242,18 @@ a.backlink:hover {
 .section .desc h3 a.internal:hover {
   color: lighten(#33856E, 15%);
 }
+
+// Цвет ссылок в футере
+footer a,
+.footer a,
+.footer-links a,
+footer .links a {
+  color: #33856E;
+  transition: color 0.2s ease;
+}
+
+footer a:hover,
+.footer a:hover,
+.footer-links a:hover,
+footer .links a:hover {
+  color: lighten(#33856E, 15%);
