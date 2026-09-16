@@ -189,14 +189,14 @@ a.backlink:hover {
   .toc a:hover,
   .toc-content a:hover,
   .toc ul li a:hover {
-    color: lighten(#33856E, 15%);                           // светлее при наведении
+    color: lighten(#33856E, 30%);                           // светлее при наведении
   }
 
   .toc a.active,
   .toc-content a.active,
   .toc ul li a.active,
   .toc a.in-view {
-    color: #33856E;              // базовый для активного пункта
+    color: lighten(#33856E, 15%);              // базовый для активного пункта
   }
 }
 
