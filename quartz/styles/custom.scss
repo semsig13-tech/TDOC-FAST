@@ -211,7 +211,7 @@ a.backlink:hover {
   .toc a,
   .toc-content a,
   .toc ul li a {
-    color: darken(#33856E, 30%);              // темнее для контраста на светлом фоне
+    color: darken(#33856E, 25%);              // темнее для контраста на светлом фоне
     transition: color 0.2s ease;
   }
 
@@ -225,7 +225,7 @@ a.backlink:hover {
   .toc-content a.active,
   .toc ul li a.active,
   .toc a.in-view {
-    color: darken(#33856E, 25%);              // самый тёмный для активного пункта
+    color: darken(#33856E, 20%);              // самый тёмный для активного пункта
   }
 }
 
