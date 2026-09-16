@@ -129,14 +129,17 @@ blockquote {
   color: lighten(#33856E, 30%);
 }
 
-.explorer a {
-  color: lighten(#33856E, 30%);       // цвет текста ссылки
-  background-color: lighten(#33856E, 15%); // заливка ссылки
-  transition: color 0.2s ease, background-color 0.2s ease;
-  border-radius: 4px;                 // опционально: скругление заливки
+// Оформление ссылок в заметке (explorer)
+.markdown-preview-view a,
+.note-content a {
+  color: lighten(#33856E, 30%);
+  background-color: lighten(#33856E, 15%);
+  transition: color 0.2s ease;
+  border-radius: 4px;
+  padding: 1px 4px;
 }
 
-.explorer a:hover {
-  color: lighten(#33856E, 45%);       // цвет текста при наведении
-  background-color: lighten(#33856E, 15%); // заливка остаётся прежней
+.markdown-preview-view a:hover,
+.note-content a:hover {
+  color: lighten(#33856E, 45%);
 }
