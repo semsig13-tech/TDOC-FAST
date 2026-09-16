@@ -228,3 +228,17 @@ a.backlink:hover {
 .backlinks > ul > li > a:hover {
   color: lighten(#33856E, 15%);
 }
+
+// Ссылки на навигационных страницах в проводнике (Explorer) 
+.explorer .folder-title,
+.explorer .nav-file-title,
+.explorer a.internal-link {
+  color: #33856E;
+  transition: color 0.2s ease;
+}
+
+.explorer .folder-title:hover,
+.explorer .nav-file-title:hover,
+.explorer a.internal-link:hover {
+  color: lighten(#33856E, 15%);
+}
