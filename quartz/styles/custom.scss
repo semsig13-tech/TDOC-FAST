@@ -120,11 +120,6 @@ blockquote {
 }
 
 // Активная вкладка в проводнике (explorer)
-.explorer .active {
-  color: lighten(#33856E, 30%); // на 30% светлее
-}
-
-// На случай, если активная ссылка имеет класс active на <a>
 .explorer a.active {
   color: lighten(#33856E, 30%);
 }
