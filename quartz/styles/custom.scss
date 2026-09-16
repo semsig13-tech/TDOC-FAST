@@ -128,3 +128,15 @@ blockquote {
 .explorer-content a:hover {
   color: lighten(#33856E, 30%);
 }
+
+.explorer a {
+  color: lighten(#33856E, 30%);       // цвет текста ссылки
+  background-color: lighten(#33856E, 15%); // заливка ссылки
+  transition: color 0.2s ease, background-color 0.2s ease;
+  border-radius: 4px;                 // опционально: скругление заливки
+}
+
+.explorer a:hover {
+  color: lighten(#33856E, 45%);       // цвет текста при наведении
+  background-color: lighten(#33856E, 15%); // заливка остаётся прежней
+}
