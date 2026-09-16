@@ -1,6 +1,52 @@
-1. https://github.com/vazome/quartz-image-zoom - увеличение картинок. 15.09.2026
+1. Изменен заголовок страницы в https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz.config.yaml
+pageTitle: TDOC
+
+2. Изменены шрифты в https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz.config.yaml
+theme:
+    fontOrigin: googleFonts
+    cdnCaching: true
+    typography:
+      header: Source Sans Pro
+      body: Source Sans Pro
+      code: IBM Plex Mono
+- source: "@quartz-community/quartz-fonts"
+    enabled: true
+    options:
+      title: "Source Sans Pro"
+      header: "Source Sans Pro"
+      body: "Source Sans Pro"
+      code: "IBM Plex Mono"
+
+3. Отключен плагин графов в https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz.config.yaml
+ - source: "@quartz-community/graph"
+    enabled: false
+    layout:
+      position: right
+      priority: 10
+
+4. Добавлен плагин https://github.com/vazome/quartz-image-zoom для увеличения картинок. 15.09.2026
 добавлен в https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz.config.yaml через 
   - source: github:vazome/quartz-image-zoom
     enabled: true 
 
-2. https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/styles/custom.scss - добавлены все линии таблиц и их центрирование. 15.09.2026
+5. https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/styles/custom.scss - добавлены все линии таблиц и их центрирование. 15.09.2026
+
+6. https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz.config.yaml - изменены ссылки в футере. 16.09.2026
+- source: "@quartz-community/footer"
+    enabled: true
+    options:
+      links:
+        tavrida.ru: https://www.tavrida.ru/ter/
+        VK: https://vk.ru/tavrida_electric
+        MAX: https://max.ru/id7714418269_biz
+
+7. https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/styles/custom.scss - изменена цветовая гамма (цвета ссылок). 16.09.2026
+
+8. Добалено правило, которое скрывает границы у таблиц с рисунками. 16.09.2026
+   Создан файл: https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/components/scripts/figureTable.inline.ts
+   Внесены изменения в файл для подключения figureTable.inline.ts: https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/components/Head.tsx
+   В документ: https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/styles/custom.scss внесены правила по оформлению таблиц с рисунками и подписью Рис.
+
+ Планируется изменение футера. Инструкция: https://chat.deepseek.com/share/dcjb99h6gzdmw920gz
+ Планируется создание и интеграция плагина для конвертации в word/pdf
+ Планируется интеграция ИИ-асистента
