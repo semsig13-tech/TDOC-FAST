@@ -47,6 +47,9 @@ theme:
    Внесены изменения в файл для подключения figureTable.inline.ts: https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/components/Head.tsx
    В документ: https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/styles/custom.scss внесены правила по оформлению таблиц с рисунками и подписью Рис.
 
+9. Изменена иконка сайта https://github.com/semsig13-tech/TDOC-FAST/blob/v5/quartz/static/icon.png 16.09.2026
+   Для изменения требуется удалить старую и загрузить новую картинку (размер 200х200 или 512х512 пикселей с именем icon.png)
+
  Планируется изменение футера. Инструкция: https://chat.deepseek.com/share/dcjb99h6gzdmw920gz
  Планируется создание и интеграция плагина для конвертации в word/pdf
  Планируется интеграция ИИ-асистента
