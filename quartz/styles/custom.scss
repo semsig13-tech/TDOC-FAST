@@ -133,7 +133,7 @@ blockquote {
 .markdown-preview-view a,
 .note-content a {
   color: lighten(#33856E, 30%);
-  background-color: lighten(#33856E, 15%);
+  background-color: rgba(#4CAF8E, 0.15);
   transition: color 0.2s ease;
   border-radius: 4px;
   padding: 1px 4px;
